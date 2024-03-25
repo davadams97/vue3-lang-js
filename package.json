@@ -16,7 +16,7 @@
   },
   "keywords": ["vue3", "plugin", "langjs", "javascript", "laravel"],
   "dependencies": {
-    "lang.js": "^1.1.14"
+    "lang.js": "1.1.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
