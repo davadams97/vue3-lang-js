@@ -10,21 +10,20 @@ function createLangInstance(options) {
   });
 }
 
-export const Vue3LangPlugin = {
+export default {
   install: (app, options = {}) => {
 
     const lang = createLangInstance(options);
 
     /** Get the plural or singular form of the message */
-    const translate = (key, plural, options) => {
+    const translate = (key, plural, options, locale) => {
       // If the second argument is an object, assume it's the options object
       if (typeof plural === 'object') {
         return lang.trans(key, plural);
       }
 
-      return lang.choice(key, plural, options);
+      return lang.choice(key, plural, options, locale);
     };
-
 
     app.config.globalProperties.$trans = translate;
     app.config.globalProperties.$t = translate;
