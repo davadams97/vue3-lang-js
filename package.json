@@ -1,7 +1,12 @@
 {
-  "name": "vue3-lang-js",
+  "name": "vue3-lang",
   "version": "0.0.1",
   "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "author": {
     "email": "david.adams97@gmail.com",
     "name": "David Alexander Adams",
@@ -9,11 +14,19 @@
   },
   "description": "This library is Vue 3 plugin that wraps lang.js",
   "license": "MIT",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davadams97/vue3-lang-js.git"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-lang.js",
+      "require": "./dist/vue3-lang.umd.cjs"
+    }
+  },
+  "module": "dist/vue3-lang.js",
+  "main": "dist/vue3-lang.umd.cjs",
+  "files": ["dist", "src"],
   "keywords": ["vue3", "plugin", "langjs", "javascript", "laravel"],
   "dependencies": {
     "lang.js": "1.1.14"
