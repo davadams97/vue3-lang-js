@@ -19,6 +19,31 @@ To install this project with:
 ## Initialization 
 
 ```vue
+// messages.js
+export const messages = {
+    "en.messages": {
+        // Pipe '|' defines singular and plural values
+        "buttonLabel": "Cancel|Plural",
+        // Defines the amount or range accepted for each value
+        'apple': '{0} There are none|[1,19] There are some|[20,*] There are many',
+        "header": "Calculate weight",
+        "footer": {
+            "saveButtonLabel": "Save",
+            "cancelButtonLabel": "Cancel"
+        }
+    },
+    "es.messages": {
+        "buttonLabel": "Cancelar",
+        "header": "Calcular peso",
+        "footer": {
+            "saveButtonLabel": "Guardar",
+            "cancelButtonLabel": "Cancelar"
+        }
+    }
+}
+```
+
+```vue
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -41,30 +66,7 @@ We also provide the `lang` instance that can accessed through
 the `inject` syntax (see below).
 
 ### Simple usage 
-```vue
-export const messages = {
-    "en.messages": {
-        // Pipe '|' defines singular and plural values
-        "buttonLabel": "Cancel|Plural",
-        // Defines the amount or range accepted for each value
-        'apple': '{0} There are none|[1,19] There are some|[20,*] There are many',
-        "header": "Calculate weight",
-        "footer": {
-            "saveButtonLabel": "Save",
-            "cancelButtonLabel": "Cancel"
-        }
-    },
-    "es.messages": {
-        "buttonLabel": "Cancelar",
-        "header": "Calcular peso",
-        "footer": {
-            "saveButtonLabel": "Guardar",
-            "cancelButtonLabel": "Cancelar"
-        }
-    }
-}
 
-```
 ```vue
 <template>
   {{ $t('messages.buttonLabel) }}
